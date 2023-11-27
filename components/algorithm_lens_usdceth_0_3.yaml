@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
+version: v1
+metadata:
+  label: algorithm_lens_usdceth_0_3
+  type: algorithm_lens
+  description: ''
+  tags:
+  - Ethereum
+  - Account
+datasource:
+  methods:
+  - id: pool_fees_usdceth_0_3
+    label: last_snapshot_value
+    identifier: 'get_last_snapshot_value : () -> (text)'
+  - id: tcumul_28x6hr_usdceth_0_3
+    label: last_snapshot_value
+    identifier: 'get_last_snapshot_value : () -> (text)'
+  - id: tcumul_30_min_usdceth_0_3
+    label: last_snapshot_value
+    identifier: 'get_last_snapshot_value : () -> (text)'
+  - id: v3pool_usdceth_0_3
+    label: last_snapshot_value
+    identifier: 'get_last_snapshot_value : () -> (text)'
+  - id: pool_usd_prices
+    label: last_snapshot_value
+    identifier: 'get_last_snapshot_value : () -> (text)'
+output:
+  name: EDPR
+  fields:
+    address: String
+    current_price: f32
+    range_top: f32
+    range_bottom: f32
+    edpr: f32
+  type: struct
+  type_name: null

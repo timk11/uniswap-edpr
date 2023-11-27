@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/snapshot_indexer_https.json
+version: v1
+metadata:
+  label: pool_usd_prices
+  type: snapshot_indexer_https
+  description: 'USD prices for pool tokens'
+  tags:
+  - uniswap
+  - USDC
+  - ETH
+datasource:
+  url: https://cush.apiary.software/ethereum
+  headers:
+    Content-Type: application/json
+  queries:
+    method: cush_poolUsdPrice
+    pool_address: 0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640
+    block_number: 0
+interval: 3600
+cycles: null
