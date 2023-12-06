@@ -7,3 +7,4 @@ components:
 - component_path: components/v3pool_usdceth_0_3.yaml
 - component_path: components/algorithm_lens_usdceth_0_3.yaml
 - component_path: components/relayer_usdceth_0_3.yaml
+- component_path: components/pool_usd_prices.yaml
