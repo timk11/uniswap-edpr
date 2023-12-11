@@ -1,4 +1,5 @@
 use usdceth_0_3_algorithm_lens_accessors :: * ;
+
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
 pub struct LensValue {
     pub address: String,
@@ -7,6 +8,19 @@ pub struct LensValue {
     pub range_bottom: f32,
     pub edpr: f32
 }
+
+#[derive(serde :: Deserialize , serde :: Serialize)]
+pub struct Result0 {
+    pub result: Result0_
+}
+
+#[derive(serde :: Deserialize , serde :: Serialize)]
+pub struct Result0_ {
+    pub fees_24h_usd: f32,
+    pub volume_24h_usd: f32,
+    pub pool_summary_level_1: String
+}
+
 pub async fn calculate (targets : Vec < String >) -> LensValue {
     let pool_fees_result = get_get_last_snapshot_value_in_usdceth_0_3_pool_fees (targets . get (0usize) . unwrap () . clone ()) . await ;
     let tc28x6_result = get_get_last_snapshot_value_in_usdceth_0_3_tcumul_28x6hr (targets . get (1usize) . unwrap () . clone ()) . await ;
