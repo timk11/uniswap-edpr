@@ -1,4 +1,6 @@
 use usdceth_0_3_algorithm_lens_accessors :: * ;
+use std :: collections :: HashMap;
+use serde_json :: Value;
 
 # [derive (Clone , Debug , Default , candid :: CandidType , serde :: Deserialize , serde :: Serialize)]
 pub struct LensValue {
@@ -9,16 +11,13 @@ pub struct LensValue {
     pub edpr: f32
 }
 
-#[derive(serde :: Deserialize , serde :: Serialize)]
-pub struct Result0 {
-    pub result: Result0_
-}
-
-#[derive(serde :: Deserialize , serde :: Serialize)]
-pub struct Result0_ {
-    pub fees_24h_usd: f32,
-    pub volume_24h_usd: f32,
-    pub pool_summary_level_1: String
+pub struct Tick {
+    fee_growth_outside_0x128: u128,
+    fee_growth_outside_1x128: u128,
+    index: i32,
+    initialized: bool,
+    liquidity_gross: u128,
+    liquidity_net: i128
 }
 
 pub async fn calculate (targets : Vec < String >) -> LensValue {
@@ -38,12 +37,13 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     let sqrt_ratio_x96 = v3pool_result.unwrap().result.sqrt_ratio_x96;
     let tick_current = v3pool_result.unwrap().result.tick_current;
     let tick_spacing = v3pool_result.unwrap().result.tick_spacing;
-    let ticks = v3pool_result.unwrap().result.ticks; // might need to fix this
+    let ticks_str = v3pool_result.unwrap().result.ticks;
+    let ticks = serde_json::from_str::<HashMap<String, Value>>(&ticks_str);
 
     let tick_cumul_28x6h = tc28x6_result.unwrap()[0];
     let tick_cumul_30m = tc30_result.unwrap()[0];
 
-    let price_x96 = u128::pow(sqrt_ratio_x96, 2) as f32;
+    let price_x96 = u128::pow(sqrt_ratio_x96.into(), 2) as f32;
     let mut current_price = price_x96 / f32::powf(2.0,192.0);
     let current_price = current_price / f32::powf(10.0,12.0);
 
@@ -71,8 +71,10 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
     for i in (floor + tick_spacing..max_tick).step_by(tick_spacing as usize) {
         match std::panic::catch_unwind(|| {
-            let (_, _, _, _, liquidity_net) = ticks.get(&i.to_string());
-            state += liquidity_net;
+            let tick_val = ticks.expect("reason").get(&i.to_string());
+            let tick: Tick = serde_json::from_value(tick_val).unwrap();
+            let liquidity_net_ = tick.liquidity_net;
+            state += liquidity_net_;
             sum_liquidity += state;
         }) {
             Ok(_) => {}
@@ -82,18 +84,20 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     state = current_tick_liquidity as i128;
     for i in (floor + tick_spacing..min_tick).rev().step_by(tick_spacing as usize) {
         match std::panic::catch_unwind(|| {
-            let (_, _, _, _, liquidity_net) = ticks.get(&i.to_string());
-            state -= liquidity_net;
+            let tick_val = ticks.expect("reason").get(&i.to_string());
+            let tick: Tick = serde_json::from_value(tick_val).unwrap();
+            let liquidity_net_ = tick.liquidity_net;
+            state -= liquidity_net_;
             sum_liquidity += state;
         }) {
             Ok(_) => {}
             Err(_) => {}
         }
     }
-    let upper_sqrt_price_x96 = f32::powf(1.0001, max_tick);
+    let upper_sqrt_price_x96 = f32::powf(1.0001, max_tick as f32);
     let mut range_top = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
     range_top = range_top / f32::powf(10.0,12.0);
-    let lower_sqrt_price_x96 = f32::powf(1.0001, max_tick);
+    let lower_sqrt_price_x96 = f32::powf(1.0001, max_tick as f32);
     let mut range_bottom = upper_sqrt_price_x96 / f32::powf(2.0,192.0);
     range_bottom = range_bottom / f32::powf(10.0,12.0);
     
@@ -104,7 +108,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
     let fees_24h_eth = fees_24h_usd / t1_price_usd;
     let edr = fees_24h_eth / tvl_in_range;
-    let edpr = edr / 100;
+    let edpr = edr / 100.0;
 
     let result = LensValue {
         address,

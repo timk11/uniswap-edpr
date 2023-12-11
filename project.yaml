@@ -1,10 +1,10 @@
 version: v1
 label: uniswap_edpr
 components:
-- component_path: components/usdceth_0_3_v3pool.yaml
+- component_path: components/pool_usd_prices.yaml
 - component_path: components/usdceth_0_3_pool_fees.yaml
-- component_path: components/usdceth_0_3_relayer.yaml
 - component_path: components/usdceth_0_3_tcumul_28x6hr.yaml
 - component_path: components/usdceth_0_3_tcumul_30_min.yaml
-- component_path: components/pool_usd_prices.yaml
+- component_path: components/usdceth_0_3_v3pool.yaml
+- component_path: components/usdceth_0_3_relayer.yaml
 - component_path: components/usdceth_0_3_algorithm_lens.yaml
