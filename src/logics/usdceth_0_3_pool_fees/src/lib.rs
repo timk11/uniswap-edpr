@@ -6,11 +6,11 @@ use candid::{Decode, Encode};
 pub struct SnapshotValue {
     pub jsonrpc: String,
     pub id: String,
-    pub result: Vec<_Result>,
+    pub result: Vec<_ResultX>,
 }
 
 #[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
-pub struct _Result {
+pub struct _ResultX {
     pub fees_24h_usd: f32,
     pub volume_24h_usd: f32,
     pub pool_summary_level_1: PoolSummaryLevel1,

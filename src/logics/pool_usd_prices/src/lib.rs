@@ -6,11 +6,11 @@ use candid::{Decode, Encode};
 pub struct SnapshotValue {
     pub jsonrpc: String,
     pub id: String,
-    pub result: _Result,
+    pub result: _ResultX,
 }
 
 #[derive(Debug, Clone, candid::CandidType, candid::Deserialize, serde::Serialize, chainsight_cdk_macros::StableMemoryStorable)]
-pub struct _Result {
+pub struct _ResultX {
     pub pool: String,
     #[serde(rename = "Timestamp")]
     pub timestamp: String,

@@ -10,12 +10,12 @@ metadata:
 datasource:
   methods:
   - id: usdceth_0_3_pool_fees
-    identifier: 'get_last_snapshot_value : () -> (text)'
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
   - id: usdceth_0_3_tcumul_28x6hr
-    identifier: 'get_last_snapshot_value : () -> (text)'
+    identifier: 'get_last_snapshot_value : () -> (record { vec int64; vec text })'
   - id: usdceth_0_3_tcumul_30_min
-    identifier: 'get_last_snapshot_value : () -> (text)'
+    identifier: 'get_last_snapshot_value : () -> (record { vec int64; vec text })'
   - id: usdceth_0_3_v3pool
-    identifier: 'get_last_snapshot_value : () -> (text)'
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
   - id: pool_usd_prices
-    identifier: 'get_last_snapshot_value : () -> (text)'
+    identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
