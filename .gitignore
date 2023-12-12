@@ -1,7 +1,7 @@
 src/__interfaces
 src/accessors
 src/bindings
-src/canisters
+# src/canisters
 src/target
 /artifacts/*
 !/artifacts/dfx.json
