@@ -11,6 +11,7 @@ pub struct LensValue {
     pub edpr: f32
 }
 
+# [derive (Default, serde :: Deserialize)]
 pub struct Tick {
     fee_growth_outside_0x128: u128,
     fee_growth_outside_1x128: u128,
@@ -72,7 +73,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     for i in (floor + tick_spacing..max_tick).step_by(tick_spacing as usize) {
         match std::panic::catch_unwind(|| {
             let tick_val = ticks.expect("reason").get(&i.to_string());
-            let tick: Tick = serde_json::from_value(tick_val).unwrap();
+            let tick: Tick = serde_json::from_value(*tick_val.unwrap()).unwrap();
             let liquidity_net_ = tick.liquidity_net;
             state += liquidity_net_;
             sum_liquidity += state;
@@ -85,7 +86,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     for i in (floor + tick_spacing..min_tick).rev().step_by(tick_spacing as usize) {
         match std::panic::catch_unwind(|| {
             let tick_val = ticks.expect("reason").get(&i.to_string());
-            let tick: Tick = serde_json::from_value(tick_val).unwrap();
+            let tick: Tick = serde_json::from_value(*tick_val.unwrap()).unwrap();
             let liquidity_net_ = tick.liquidity_net;
             state -= liquidity_net_;
             sum_liquidity += state;
