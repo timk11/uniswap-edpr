@@ -1,1 +1,0 @@
-use chainsight_cdk_macros :: def_algorithm_lens_canister ; def_algorithm_lens_canister ! ("{\"common\":{\"canister_name\":\"usdceth_0_3_algorithm_lens\"},\"target_count\":5,\"args_type\":null}") ;

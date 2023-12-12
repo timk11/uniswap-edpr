@@ -1,1 +1,0 @@
-use chainsight_cdk_macros :: def_snapshot_indexer_evm_canister ; def_snapshot_indexer_evm_canister ! ("{\"common\":{\"canister_name\":\"usdceth_0_3_tcumul_30_min\"},\"method_identifier\":\"observe(uint32[]):(int56[],uint160[])\",\"method_args\":[[1800,0]],\"abi_file_path\":\"./__interfaces/UniswapV3Pool.json\"}") ;
