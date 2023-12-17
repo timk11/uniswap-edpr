@@ -43,7 +43,7 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
 
     let price_x96 = u128::pow(sqrt_ratio_x96.into(), 2) as f32;
     let mut current_price = price_x96 / f32::powf(2.0,192.0);
-    let current_price = current_price / f32::powf(10.0,12.0);
+    current_price = current_price / f32::powf(10.0,12.0);
 
     let mut compressed: i32 = tick_current / tick_spacing;
     if tick_current <0 && tick_current % tick_spacing != 0 {
@@ -109,11 +109,17 @@ pub async fn calculate (targets : Vec < String >) -> LensValue {
     let edr = fees_24h_eth / tvl_in_range;
     let edpr = edr / 100.0;
 
+    current_price = 1.0 / current_price;
+    let new_range_top = 1.0 / range_bottom;
+    let new_range_bottom = 1.0 / range_top;
+    range_top = new_range_top;
+    range_bottom = new_range_bottom;
+
     let result = LensValue {
         address,
-        1.0 / current_price,
-        1.0 / range_bottom,
-        1.0 / range_top,
+        current_price,
+        range_top,
+        range_bottom,
         edpr
     };
     result
