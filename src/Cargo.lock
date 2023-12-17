@@ -1616,7 +1616,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
-name = "eth_usdc_price"
+name = "pool_usd_prices"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -1635,7 +1635,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "eth_usdc_price_canister"
+name = "pool_usd_prices_canister"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -1648,7 +1648,7 @@ dependencies = [
  "ic-solidity-bindgen",
  "ic-stable-structures",
  "ic-web3-rs",
- "eth_usdc_price",
+ "pool_usd_prices",
  "serde",
  "serde_bytes",
 ]
@@ -2255,7 +2255,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "usdc_eth_0_3_algorithm_lens"
+name = "usdceth_0_3_algorithm_lens"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2271,12 +2271,12 @@ dependencies = [
  "serde",
  "serde_bytes",
  "serde_json",
- "usdc_eth_0_3_algorithm_lens_accessors",
- "usdc_eth_0_3_algorithm_lens_bindings",
+ "usdceth_0_3_algorithm_lens_accessors",
+ "usdceth_0_3_algorithm_lens_bindings",
 ]
 
 [[package]]
-name = "usdc_eth_0_3_algorithm_lens_accessors"
+name = "usdceth_0_3_algorithm_lens_accessors"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2291,11 +2291,11 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
- "usdc_eth_0_3_algorithm_lens_bindings",
+ "usdceth_0_3_algorithm_lens_bindings",
 ]
 
 [[package]]
-name = "usdc_eth_0_3_algorithm_lens_bindings"
+name = "usdceth_0_3_algorithm_lens_bindings"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2308,27 +2308,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "usdc_eth_0_3_algorithm_lens_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "usdc_eth_0_3_algorithm_lens",
- "usdc_eth_0_3_algorithm_lens_bindings",
-]
-
-[[package]]
-name = "usdc_eth_0_3_pool_fees"
+name = "usdceth_0_3_algorithm_lens_canister"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2343,83 +2323,12 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
- "serde_json",
+ "usdceth_0_3_algorithm_lens",
+ "usdceth_0_3_algorithm_lens_bindings",
 ]
 
 [[package]]
-name = "usdc_eth_0_3_pool_fees_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "usdc_eth_0_3_pool_fees",
-]
-
-[[package]]
-name = "usdc_eth_0_3_relayer"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "serde_json",
- "usdc_eth_0_3_relayer_bindings",
-]
-
-[[package]]
-name = "usdc_eth_0_3_relayer_bindings"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "ic-cdk 0.11.3",
- "ic-stable-structures",
- "serde",
- "serde_bytes",
-]
-
-[[package]]
-name = "usdc_eth_0_3_relayer_canister"
-version = "0.1.0"
-dependencies = [
- "candid 0.9.11",
- "chainsight-cdk",
- "chainsight-cdk-macros",
- "hex",
- "ic-cdk 0.11.3",
- "ic-cdk-macros 0.8.1",
- "ic-cdk-timers",
- "ic-solidity-bindgen",
- "ic-stable-structures",
- "ic-web3-rs",
- "serde",
- "serde_bytes",
- "usdc_eth_0_3_relayer",
- "usdc_eth_0_3_relayer_bindings",
-]
-
-[[package]]
-name = "usdc_eth_0_3_tcumul_28x6hr"
+name = "usdceth_0_3_pool_fees"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2438,7 +2347,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "usdc_eth_0_3_tcumul_28x6hr_canister"
+name = "usdceth_0_3_pool_fees_canister"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2453,11 +2362,64 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
- "usdc_eth_0_3_tcumul_28x6hr",
+ "usdceth_0_3_pool_fees",
 ]
 
 [[package]]
-name = "usdc_eth_0_3_tcumul_30_min"
+name = "usdceth_0_3_relayer"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+ "usdceth_0_3_relayer_bindings",
+]
+
+[[package]]
+name = "usdceth_0_3_relayer_bindings"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "ic-cdk 0.11.3",
+ "ic-stable-structures",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
+name = "usdceth_0_3_relayer_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "usdceth_0_3_relayer",
+ "usdceth_0_3_relayer_bindings",
+]
+
+[[package]]
+name = "usdceth_0_3_tcumul_28x6hr"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2476,7 +2438,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "usdc_eth_0_3_tcumul_30_min_canister"
+name = "usdceth_0_3_tcumul_28x6hr_canister"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2491,11 +2453,11 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
- "usdc_eth_0_3_tcumul_30_min",
+ "usdceth_0_3_tcumul_28x6hr",
 ]
 
 [[package]]
-name = "usdc_eth_0_3_v3pool"
+name = "usdceth_0_3_tcumul_30_min"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2514,7 +2476,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "usdc_eth_0_3_v3pool_canister"
+name = "usdceth_0_3_tcumul_30_min_canister"
 version = "0.1.0"
 dependencies = [
  "candid 0.9.11",
@@ -2529,7 +2491,45 @@ dependencies = [
  "ic-web3-rs",
  "serde",
  "serde_bytes",
- "usdc_eth_0_3_v3pool",
+ "usdceth_0_3_tcumul_30_min",
+]
+
+[[package]]
+name = "usdceth_0_3_v3pool"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "serde_json",
+]
+
+[[package]]
+name = "usdceth_0_3_v3pool_canister"
+version = "0.1.0"
+dependencies = [
+ "candid 0.9.11",
+ "chainsight-cdk",
+ "chainsight-cdk-macros",
+ "hex",
+ "ic-cdk 0.11.3",
+ "ic-cdk-macros 0.8.1",
+ "ic-cdk-timers",
+ "ic-solidity-bindgen",
+ "ic-stable-structures",
+ "ic-web3-rs",
+ "serde",
+ "serde_bytes",
+ "usdceth_0_3_v3pool",
 ]
 
 [[package]]
