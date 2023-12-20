@@ -24,8 +24,8 @@ pub struct Tick {
 pub async fn calculate (targets : Vec < String >) -> LensValue {
     let pool_fees_result = get_get_last_snapshot_value_in_rndr_eth_1_pool_fees (targets . get (0usize) . unwrap () . clone ()) . await ;
     let tc28x6_result = get_get_last_snapshot_value_in_rndr_eth_1_tcumul_28x6hr (targets . get (1usize) . unwrap () . clone ()) . await ;
-    let v3pool_result = get_get_last_snapshot_value_in_rndr_eth_1_v3pool (targets . get (3usize) . unwrap () . clone ()) . await ;
-    let eth_usdc_price_result = get_get_last_snapshot_value_in_eth_usdc_price (targets . get (4usize) . unwrap () . clone ()) . await ;
+    let v3pool_result = get_get_last_snapshot_value_in_rndr_eth_1_v3pool (targets . get (2usize) . unwrap () . clone ()) . await ;
+    let eth_usdc_price_result = get_get_last_snapshot_value_in_eth_usdc_price (targets . get (3usize) . unwrap () . clone ()) . await ;
     
     let fees_24h_usd = pool_fees_result.unwrap().result[0].fees_24h_usd;
 
