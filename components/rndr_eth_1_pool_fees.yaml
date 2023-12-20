@@ -6,7 +6,7 @@ metadata:
   description: '24-hour pool fees'
   tags:
   - uniswap
-  - USDC
+  - RNDR
   - ETH
 datasource:
   url: https://cush.apiary.software/ethereum
