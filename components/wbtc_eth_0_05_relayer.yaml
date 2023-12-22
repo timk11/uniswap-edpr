@@ -10,7 +10,7 @@ metadata:
 datasource:
   type: canister
   location:
-    id: pairs_algorithm_lens
+    id: wbtc_eth_0_05_algorithm_lens
     args:
       id_type: canister_name
   method:

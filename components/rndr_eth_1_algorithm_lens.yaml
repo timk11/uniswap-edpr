@@ -1,19 +1,19 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/horizonx-tech/chainsight-cli/main/resources/schema/algorithm_lens.json
 version: v1
 metadata:
-  label: pairs_algorithm_lens
+  label: rndr_eth_1_algorithm_lens
   type: algorithm_lens
-  description: 'Calculates EDPR for each trading pair'
+  description: ''
   tags:
   - Ethereum
   - Account
 datasource:
   methods:
-  - id: pool_fees
+  - id: rndr_eth_1_pool_fees
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-  - id: tcumul_28x6hr
+  - id: rndr_eth_1_tcumul_28x6hr
     identifier: 'get_last_snapshot_value : () -> (record { vec int64; vec text })'
-  - id: v3pool
+  - id: rndr_eth_1_v3pool
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'
-  - id: price
+  - id: eth_usdc_price
     identifier: 'get_last_snapshot_value : () -> (SnapshotValue)'

@@ -10,7 +10,7 @@ metadata:
 datasource:
   type: canister
   location:
-    id: pairs_algorithm_lens
+    id: rndr_eth_1_algorithm_lens
     args:
       id_type: canister_name
   method:
