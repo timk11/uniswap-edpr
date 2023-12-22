@@ -1,65 +1,23 @@
 {
-  "eth_usdc_price": {
-    "ic": "ywlvu-6qaaa-aaaag-qcxuq-cai"
-  },
-  "rndr_eth_1_algorithm_lens": {
-    "ic": "3u6il-oaaaa-aaaag-qcx7q-cai"
-  },
-  "rndr_eth_1_pool_fees": {
-    "ic": "2cvqa-3qaaa-aaaag-qcx2q-cai"
-  },
-  "rndr_eth_1_relayer": {
-    "ic": "324fd-vqaaa-aaaag-qcx6q-cai"
-  },
-  "rndr_eth_1_tcumul_28x6hr": {
-    "ic": "2lw34-nyaaa-aaaag-qcx3a-cai"
-  },
-  "rndr_eth_1_v3pool": {
-    "ic": "2mx5i-aaaaa-aaaag-qcx3q-cai"
-  },
-  "usdc_eth_0_3_algorithm_lens": {
-    "ic": "2zqmf-biaaa-aaaag-qcxya-cai"
-  },
-  "usdc_eth_0_3_pool_fees": {
-    "ic": "y7i6i-iyaaa-aaaag-qcxva-cai"
-  },
-  "usdc_eth_0_3_relayer": {
-    "ic": "26rkr-mqaaa-aaaag-qcxyq-cai"
-  },
-  "usdc_eth_0_3_tcumul_28x6hr": {
-    "ic": "ydmez-7yaaa-aaaag-qcxxa-cai"
-  },
-  "usdc_eth_0_3_v3pool": {
-    "ic": "yencn-saaaa-aaaag-qcxxq-cai"
-  },
-  "vra_eth_0_3_algorithm_lens": {
-    "ic": "3i2s2-zaaaa-aaaag-qcx5q-cai"
-  },
-  "vra_eth_0_3_pool_fees": {
-    "ic": "3bzzg-piaaa-aaaag-qcx4a-cai"
-  },
-  "vra_eth_0_3_relayer": {
-    "ic": "3t7o7-dyaaa-aaaag-qcx7a-cai"
-  },
-  "vra_eth_0_3_tcumul_28x6hr": {
-    "ic": "3gy7s-cqaaa-aaaag-qcx4q-cai"
-  },
-  "vra_eth_0_3_v3pool": {
-    "ic": "oeir5-oyaaa-aaaag-qcyaa-cai"
-  },
-  "wbtc_eth_0_05_algorithm_lens": {
-    "ic": "3p3uo-uyaaa-aaaag-qcx5a-cai"
-  },
-  "wbtc_eth_0_05_pool_fees": {
-    "ic": "2xsbn-2yaaa-aaaag-qcxza-cai"
-  },
-  "wbtc_eth_0_05_relayer": {
-    "ic": "355dx-yiaaa-aaaag-qcx6a-cai"
-  },
-  "wbtc_eth_0_05_tcumul_28x6hr": {
-    "ic": "2qthz-xaaaa-aaaag-qcxzq-cai"
-  },
-  "wbtc_eth_0_05_v3pool": {
-    "ic": "2fuwu-wiaaa-aaaag-qcx2a-cai"
-  }
+  "eth_usdc_price": {},
+  "rndr_eth_1_algorithm_lens": {},
+  "rndr_eth_1_pool_fees": {},
+  "rndr_eth_1_relayer": {},
+  "rndr_eth_1_tcumul_28x6hr": {},
+  "rndr_eth_1_v3pool": {},
+  "usdc_eth_0_3_algorithm_lens": {},
+  "usdc_eth_0_3_pool_fees": {},
+  "usdc_eth_0_3_relayer": {},
+  "usdc_eth_0_3_tcumul_28x6hr": {},
+  "usdc_eth_0_3_v3pool": {},
+  "vra_eth_0_3_algorithm_lens": {},
+  "vra_eth_0_3_pool_fees": {},
+  "vra_eth_0_3_relayer": {},
+  "vra_eth_0_3_tcumul_28x6hr": {},
+  "vra_eth_0_3_v3pool": {},
+  "wbtc_eth_0_05_algorithm_lens": {},
+  "wbtc_eth_0_05_pool_fees": {},
+  "wbtc_eth_0_05_relayer": {},
+  "wbtc_eth_0_05_tcumul_28x6hr": {},
+  "wbtc_eth_0_05_v3pool": {}
 }
