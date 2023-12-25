@@ -1,5 +1,7 @@
 {
-  "eth_usdc_price": {},
+  "eth_usdc_price": {
+    "ic": "j6lzv-maaaa-aaaag-qcysq-cai"
+  },
   "rndr_eth_1_algorithm_lens": {},
   "rndr_eth_1_pool_fees": {},
   "rndr_eth_1_relayer": {},
