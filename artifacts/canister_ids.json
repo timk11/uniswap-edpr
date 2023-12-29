@@ -1,18 +1,12 @@
 {
-  "eth_usdc_price": {
-    "ic": "j6lzv-maaaa-aaaag-qcysq-cai"
-  },
+  "eth_usdc_price": {},
   "rndr_eth_1_algorithm_lens": {},
-  "rndr_eth_1_pool_fees": {
-    "ic": "ipbhk-uiaaa-aaaag-qcyxa-cai"
-  },
+  "rndr_eth_1_pool_fees": {},
   "rndr_eth_1_relayer": {},
   "rndr_eth_1_tcumul_28x6hr": {},
   "rndr_eth_1_v3pool": {},
   "usdc_eth_0_3_algorithm_lens": {},
-  "usdc_eth_0_3_pool_fees": {
-    "ic": "ks4jc-haaaa-aaaag-qcyyq-cai"
-  },
+  "usdc_eth_0_3_pool_fees": {},
   "usdc_eth_0_3_relayer": {},
   "usdc_eth_0_3_tcumul_28x6hr": {},
   "usdc_eth_0_3_v3pool": {},
